@@ -76,6 +76,14 @@ void DynamicArray::operator+=(const DynamicArray& _secondArray)
 			this->setElement(capacite, _secondArray.getElement(i));
 		}
 	}
+	else
+	{
+		int tempCapacite = capacite;
+		for (unsigned int i = 0; i < tempCapacite; i++)
+		{
+			this->setElement(tempCapacite + i, this->getElement(i));
+		}
+	}
 }
 
 int DynamicArray::getCapacite() const
