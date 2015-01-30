@@ -27,6 +27,9 @@ int DynamicArray::getCapacite() const
 
 const int DynamicArray::getElement(unsigned int _index) const
 {
+	if (_index > 0 && _index > capacite)
+		throw std::out_of_range("L'index n'est pas dans le tableau");
+
 	return tabElements[_index];
 }
 
