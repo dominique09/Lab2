@@ -7,13 +7,12 @@ class DynamicArray
 
 public:
 	DynamicArray();
-	unsigned int getCapacite();
-
+	unsigned int getCapacite() const;
+	const int getElement(unsigned int _index) const;
 
 private:
 	unsigned int capacite;
 	int * tabElements;
-	
 };
 
 
