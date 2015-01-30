@@ -15,6 +15,17 @@ DynamicArray::DynamicArray(unsigned int _capacite)
 	tabElements = new int[capacite]{0};
 }
 
+DynamicArray::DynamicArray(const DynamicArray & _oldArray)
+{
+	capacite = _oldArray.getCapacite();
+	tabElements = new int[capacite];
+
+	for (unsigned int i = 0; i < capacite; i++)
+	{
+		tabElements[i] = _oldArray.getElement(i);
+	}
+}
+
 DynamicArray::~DynamicArray()
 {
 	delete tabElements;

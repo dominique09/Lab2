@@ -8,6 +8,7 @@ class DynamicArray
 public:
 	DynamicArray();
 	DynamicArray(unsigned int _capacite);
+	DynamicArray(const DynamicArray & _oldArray);
 	~DynamicArray();
 	int getCapacite() const;
 	const int getElement(unsigned int _index) const;
