@@ -43,16 +43,28 @@ void DynamicArray::operator=(const DynamicArray& _oldArray)
 
 bool DynamicArray::operator==(const DynamicArray& _compareArray) const
 {
+	bool equals = false;
+
 	if (this->capacite == _compareArray.getCapacite())
 	{
 		for (unsigned int i = 0; i < capacite; i++)
 		{
 			if (tabElements[i] == _compareArray.getElement(i))
-				return true;
+			{
+				equals = true;
+			}
+			else
+			{
+				return false;
+			}
 		}
 	}
+	else
+	{
+		equals = false;
+	}
 
-	return false;
+	return equals;
 }
 
 int DynamicArray::getCapacite() const
