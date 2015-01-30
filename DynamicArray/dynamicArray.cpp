@@ -31,6 +31,30 @@ DynamicArray::~DynamicArray()
 	delete tabElements;
 }
 
+void DynamicArray::operator=(const DynamicArray& _oldArray)
+{
+	this->setCapacite(_oldArray.getCapacite());
+
+	for (unsigned int i = 0; i < capacite; i++)
+	{
+		tabElements[i] = _oldArray.getElement(i);
+	}
+}
+
+bool DynamicArray::operator==(const DynamicArray& _compareArray) const
+{
+	if (this->capacite == _compareArray.getCapacite())
+	{
+		for (unsigned int i = 0; i < capacite; i++)
+		{
+			if (tabElements[i] == _compareArray.getElement(i))
+				return true;
+		}
+	}
+
+	return false;
+}
+
 int DynamicArray::getCapacite() const
 {
 	return capacite;
