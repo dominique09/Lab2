@@ -67,6 +67,17 @@ bool DynamicArray::operator==(const DynamicArray& _compareArray) const
 	return equals;
 }
 
+void DynamicArray::operator+=(const DynamicArray& _secondArray)
+{
+	if (!(*this == _secondArray))
+	{
+		for (unsigned int i = 0; i < _secondArray.getCapacite(); i++)
+		{
+			this->setElement(capacite, _secondArray.getElement(i));
+		}
+	}
+}
+
 int DynamicArray::getCapacite() const
 {
 	return capacite;
