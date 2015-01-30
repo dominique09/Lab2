@@ -12,7 +12,7 @@ DynamicArray::DynamicArray(unsigned int _capacite)
 	tabElements = new int[capacite]{0};
 }
 
-unsigned int DynamicArray::getCapacite() const
+int DynamicArray::getCapacite() const
 {
 	return capacite;
 }
