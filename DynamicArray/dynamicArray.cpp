@@ -15,3 +15,8 @@ const int DynamicArray::getElement(unsigned int _index) const
 {
 	return tabElements[_index];
 }
+
+void DynamicArray::setElement(const int _index, const int _valeur)
+{
+	tabElements[_index] = _valeur;
+}
