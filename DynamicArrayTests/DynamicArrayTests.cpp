@@ -3,7 +3,7 @@
 
 #include "../DynamicArray/dynamicArray.h"
 
-#include  <vld.h>
+//#include  <vld.h>
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -16,19 +16,19 @@ namespace DynamicArrayTests
 		/////////////////////////////////////////////////
 		// Partie 1  (lab 2)
 		/////////////////////////////////////////////////
+		
+		TEST_METHOD(la_capacite_par_defaut_d_un_dynamicArray_est_de_100)
+		{
+			//Arrange
+			const int CAPACITE_DEFAUT = 100;
+			DynamicArray tableau;
 
-		//TEST_METHOD(la_capacite_par_defaut_d_un_dynamicArray_est_de_100)
-		//{
-		//	//Arrange
-		//	const int CAPACITE_DEFAUT = 100;
-		//	DynamicArray tableau;
+			//Action
+			int capacite = tableau.getCapacite();
 
-		//	//Action
-		//	int capacite = tableau.getCapacite();
-
-		//	//Assert
-		//	Assert::AreEqual(CAPACITE_DEFAUT, capacite);
-		//}
+			//Assert
+			Assert::AreEqual(CAPACITE_DEFAUT, capacite);
+		}
 
 		//TEST_METHOD(la_valeur_par_defaut_des_elements_d_un_dyanmicArray_est_0)
 		//{

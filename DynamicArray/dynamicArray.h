@@ -6,12 +6,14 @@ class DynamicArray
 {
 
 public:
-
+	DynamicArray();
+	unsigned int getCapacite();
 
 
 private:
-
-
+	unsigned int capacite;
+	int * tabElements;
+	
 };
 
 
