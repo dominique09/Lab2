@@ -219,12 +219,29 @@ namespace DynamicArrayTests
 
 			//Action
 			DynamicArray tableau2(tableau1);
-
-			//Assert
 			
 			// AssertDynamicArraysAreEqual est un méthode privée déclarée à la fin de la classe de tests. Enlever les commentaire pour y avoir accès.
 			AssertDynamicArraysAreEqual(tableau1, tableau2); 
 
+		}
+
+		TEST_METHOD(la_copie_du_constructeur_de_copie_devrait_etre_profonde)
+		{
+			//Arrange
+			const int CAPACITE = 5;
+			DynamicArray tableau1(CAPACITE);
+
+			for (unsigned int i = 0; i < CAPACITE; ++i)
+			{
+				tableau1.setElement(i, i*i);
+			}
+
+			//Action
+			DynamicArray tableau2(tableau1);
+			tableau2.setElement(1, 99);
+
+			//Assert
+			Assert::IsTrue(tableau1.getElement(1) != tableau2.getElement(1));
 		}
 
 		TEST_METHOD(l_operateur_egal_devrait_copier_tout_le_contenu_d_un_dynamicArray)
