@@ -13,7 +13,7 @@ public:
 
 	void operator=(const DynamicArray & _oldArray);
 	bool operator==(const DynamicArray & _compareArray) const;
-	void operator+=(const DynamicArray & _secondArray);
+	DynamicArray &operator+=(const DynamicArray & _secondArray);
 
 	int getCapacite() const;
 	const int getElement(unsigned int _index) const;

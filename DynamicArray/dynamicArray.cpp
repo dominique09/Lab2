@@ -33,11 +33,13 @@ DynamicArray::~DynamicArray()
 
 void DynamicArray::operator=(const DynamicArray& _oldArray)
 {
-	this->setCapacite(_oldArray.getCapacite());
+	if (this != & _oldArray){
+		this->setCapacite(_oldArray.getCapacite());
 
-	for (unsigned int i = 0; i < capacite; i++)
-	{
-		tabElements[i] = _oldArray.getElement(i);
+		for (unsigned int i = 0; i < capacite; i++)
+		{
+			tabElements[i] = _oldArray.getElement(i);
+		}
 	}
 }
 
@@ -67,7 +69,7 @@ bool DynamicArray::operator==(const DynamicArray& _compareArray) const
 	return equals;
 }
 
-void DynamicArray::operator+=(const DynamicArray& _secondArray)
+DynamicArray &DynamicArray::operator+=(const DynamicArray& _secondArray)
 {
 	if (!(*this == _secondArray))
 	{
@@ -84,6 +86,8 @@ void DynamicArray::operator+=(const DynamicArray& _secondArray)
 			this->setElement(tempCapacite + i, this->getElement(i));
 		}
 	}
+
+	return *this;
 }
 
 int DynamicArray::getCapacite() const
